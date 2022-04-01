@@ -24,7 +24,7 @@ fun checkForInternet(context: Context): Boolean {
             else -> false
         }
     } else {
-        // Si la versión de Android es menor a M
+        // Si la versión de Android es menor
         @Suppress("DEPRECATION") val networkInfo =
             connectivityManager.activeNetworkInfo ?: return false
         @Suppress("DEPRECATION")

@@ -7,6 +7,8 @@ interface WeatherService {
     @GET("data/2.5/weather")
     // api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid={API key}
     // api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+
+
     suspend fun getWeatherById(
         //@Query("id") lon: Long,
         @Query("lat") lat: String,

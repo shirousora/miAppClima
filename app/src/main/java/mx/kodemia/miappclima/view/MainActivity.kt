@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.menu_actualizar -> {
                 // Toast.makeText(this, "Menú seleccionado", Toast.LENGTH_SHORT).show()
-                showCreateUserDialog("27")
+                showCreateUserDialog("TEMP")
             }
         }
         return super.onOptionsItemSelected(item)
@@ -142,10 +142,41 @@ class MainActivity : AppCompatActivity() {
                 status = (weatherDescription[0].uppercaseChar() + weatherDescription.substring(1))
             }
             val dt = weatherEntity.dt
+
+            val hora = SimpleDateFormat(
+                "HH",
+                Locale.ENGLISH
+            ).format(Date(dt * 1000))
+
+            //darle formato a  la fecha de consulta con hora y minutos
             val updatedAt =  getString(R.string.updatedAt) + SimpleDateFormat(
                 "hh:mm a",
                 Locale.ENGLISH
             ).format(Date(dt * 1000))
+
+            Log.d(TAG, "HORA: $hora ")
+
+            val horaInt = hora.toInt()
+
+
+            /*bg = when(hora){
+                in 0..18 -> 1
+                in 19..23 -> 0
+                else -> 2
+            }*/
+
+            var bg = getDrawable(R.drawable.minibg)
+
+            if(horaInt<18){
+                bg = getDrawable(R.drawable.mydaygradient_bg)
+            }else{
+                bg = getDrawable(R.drawable.mynightgradient_bg)
+            }
+
+            Log.d(TAG, "HORA: $horaInt ")
+
+
+
             val sunrise = weatherEntity.sys.sunrise
             val sunriseFormat = SimpleDateFormat("hh:mm a", Locale.ENGLISH).format(Date(sunrise*1000))
             val sunset = weatherEntity.sys.sunset
@@ -156,7 +187,7 @@ class MainActivity : AppCompatActivity() {
             val feelsLike = getString(R.string.sensation) + weatherEntity.main.feels_like.toInt() + "º"
             val icon = weatherEntity.weather[0].icon
             val iconUrl = "https://openweathermap.org/img/w/$icon.png"
-            val bg = getDrawable(R.drawable.mydaygradient_bg)
+
 
             binding.apply {
                 mainConstraintLayout.background = bg
@@ -175,7 +206,7 @@ class MainActivity : AppCompatActivity() {
                 detailsContainer.isVisible = true
                 feelsLikeTextView.text = feelsLike
             }
-            Log.d(TAG, "HORA: $updatedAt ")
+
             showIndicator(false)
         } catch (exception: Exception) {
             showError(getString(R.string.error_ocurred))
@@ -190,8 +221,8 @@ class MainActivity : AppCompatActivity() {
     private fun showCreateUserDialog(temperature: String) {
         MaterialAlertDialogBuilder(this)
             .setTitle("La temperatura actual es: \"$temperature\".")
-            .setMessage("¿Quieres cambiar de ubicación?")
-            .setPositiveButton("Nueva ubicación") { _, _ ->
+            .setMessage("¿Quieres actualizar los datos?")
+            .setPositiveButton("Actualizar") { _, _ ->
                 onConfirmLocationChange()
             }
             .setNegativeButton("Cancelar") { _, _ ->
@@ -201,7 +232,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onConfirmLocationChange() {
-        /* perform more business logic */
+        /* falta implementar */
     }
 
     /**

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/hachi_maru_pop"
         android:textColor="@android:color/white"
@@ -41,12 +41,13 @@
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/hachi_maru_pop"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tempMaxTextView"
         tools:text="Cielo despejado" />
 
     <TextView
@@ -55,12 +56,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/detailsContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6"
+        app:layout_constraintVertical_bias="0.46"
         tools:text="24º" />
 
     <TextView
@@ -110,7 +112,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/day_icon"
+                    android:src="@drawable/sun_icon"
                      />
 
                 <Space
@@ -152,7 +154,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/night_icon"
+                    android:src="@drawable/moon_icon"
                      />
 
                 <Space
@@ -194,7 +196,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="@null"
-                    android:src="@drawable/wind_icon"
+                    android:src="@drawable/wind2_icon"
                      />
 
                 <Space
@@ -386,22 +388,25 @@
         android:id="@+id/feelsLikeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:layout_marginTop="92dp"
         android:fontFamily="@font/hachi_maru_pop"
-        android:textColor="@android:color/white"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tempMinTextView"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureTextView"
         tools:text="Sensación: 22º" />
 
     <ImageView
         android:id="@+id/iconImageView"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:contentDescription="@null"
-        app:layout_constraintStart_toEndOf="@+id/temperatureTextView"
-        app:layout_constraintTop_toTopOf="@+id/temperatureTextView"
+        app:layout_constraintBottom_toTopOf="@+id/statusTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempMaxTextView"
         tools:srcCompat="@tools:sample/avatars" />
 
 

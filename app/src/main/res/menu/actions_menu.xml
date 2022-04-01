@@ -4,4 +4,7 @@
     <item
         android:id="@+id/menu_actualizar"
         android:title="@string/update" />
+    <item
+        android:id="@+id/menu_nueva_ubicacion"
+        android:title="@string/newLoc" />
 </menu>

@@ -8,6 +8,7 @@
     <string name="dev_name">SORA</string>
     <string name="pressure">Presión</string>
     <string name="update">Actualizar</string>
+    <string name="newLoc">Nueva Ubicación</string>
     <string name="humidity">Humedad</string>
     <string name="logo">ClimApp</string>
     <string name="no_location_detected">
@@ -24,7 +25,7 @@
     <string name="updated">\"Actualizado: "</string>
     <string name="sensation">\"Sensación: "</string>
     <string name="error_ocurred">Ha ocurrido un error con los datos</string>
-    <string name="updatedAt">\"Actualizado: \"</string>
+    <string name="updatedAt">\"Hora de consulta: \"</string>
     <string name="hello">ALÓ</string>
     <string name="canceled_action">Acción cancelada</string>
 </resources>
