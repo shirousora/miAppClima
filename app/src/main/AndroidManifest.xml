@@ -15,10 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiAppClima" >
         <activity
-            android:name=".view.SplashScreen"
+            android:name="mx.kodemia.miappclima.ui.view.SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".view.MainActivity"
+            android:name="mx.kodemia.miappclima.ui.view.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

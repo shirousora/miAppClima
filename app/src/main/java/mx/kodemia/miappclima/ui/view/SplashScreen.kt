@@ -1,4 +1,4 @@
-package mx.kodemia.miappclima.view
+package mx.kodemia.miappclima.ui.view
 
 import android.content.Intent
 import android.os.Build

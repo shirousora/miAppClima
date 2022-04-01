@@ -1,4 +1,4 @@
-package mx.kodemia.miappclima.view
+package mx.kodemia.miappclima.ui.view
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
             binding.detailsContainer.isVisible = false
         }
     }
-
+  //TODO change this retrofit to his own file
     private suspend fun getWeather(): WeatherEntity = withContext(Dispatchers.IO){
         Log.e(TAG, "CORR Lat: $latitude Long: $longitude")
         // showIndicator(true)
@@ -232,6 +232,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onConfirmLocationChange() {
+        //TODO create function
         /* falta implementar */
     }
 
